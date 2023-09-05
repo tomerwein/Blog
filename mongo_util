@@ -1,0 +1,16 @@
+import mongoose from 'mongoose';
+
+const url = 'mongodb+srv://weintome:v0PvQ9EI1dVG8QFA@cluster0.ofrttje.mongodb.net/VideoApp'
+mongoose.set('strictQuery',false)
+mongoose.connect(url)
+
+const videoSchema = new mongoose.Schema({
+    url: String,
+    user: String,
+    date: Date,
+    id: Number,
+})
+
+export const Video = mongoose.models.Video || mongoose.model('Video', videoSchema)
+
+export default { Video };
