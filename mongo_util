@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const url = 'mongodb+srv://weintome:v0PvQ9EI1dVG8QFA@cluster0.ofrttje.mongodb.net/VideoApp'
+const url = process.env.MONGO_DB_URL;
 mongoose.set('strictQuery',false)
 mongoose.connect(url)
 
