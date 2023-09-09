@@ -1,6 +1,5 @@
-I developed a blog with a RESTful architecture integrated with MongoDB
-for optimized data management. It prioritizes user experience and security 
-by featuring robust JSON Web Token authentication, including registration
-and login functionalities. The platform utilizes Cloudinary for efficient
-media hosting and empowers users to manage their posts while being 
-meticulously safeguarded against CSRF threats.
+I developed a secure and user-friendly blog platform where users can sign
+in with their own username and password to manage their posts, including 
+text, images, or videos, while also being able to view posts from other users.
+The platform includes essential features like registration,
+login, and protection against common security threats.
