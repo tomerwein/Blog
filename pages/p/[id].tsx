@@ -54,6 +54,16 @@ const Post: React.FC<PostProps> = (props) => {
         <h2>{title}</h2>
         <p>By {props?.author?.name || "Unknown author"}</p>
         <ReactMarkdown children={props.content} />
+
+        <div>
+        {url && 
+        <video controls width="40%">
+            <source src={url} type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+        }
+        </div>
+
         {!props.published && userHasValidSession && postBelongsToUser && (
           <button onClick={() => publishPost(props.id)}>Publish</button>
         )}
@@ -61,12 +71,7 @@ const Post: React.FC<PostProps> = (props) => {
           <button onClick={() => deletePost(props.id)}>Delete</button>
         )}
 
-        {url && 
-        <video controls width="40%">
-            <source src={url} type="video/mp4" />
-            Your browser does not support the video tag.
-        </video>
-      }
+        
       </div>
       <style jsx>{`
         .page {

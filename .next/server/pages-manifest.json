@@ -2,8 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/create": "pages/create.js",
-  "/api/post": "pages/api/post.js",
-  "/drafts": "pages/drafts.js",
-  "/profile": "pages/profile.js"
+  "/profile": "pages/profile.js",
+  "/signin": "pages/signin.js",
+  "/api/signin": "pages/api/signin.js",
+  "/": "pages/index.js"
 }

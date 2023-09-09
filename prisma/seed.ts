@@ -1,5 +1,12 @@
 import { PrismaClient, Prisma } from '@prisma/client'
 
+/* 
+
+to run the database type:
+"npx prisma migrate dev --name init"
+
+*/
+
 const prisma = new PrismaClient()
 
 const createNewPosts = (amount: number): (Prisma.PostCreateInput[]) => {
@@ -14,52 +21,6 @@ const createNewPosts = (amount: number): (Prisma.PostCreateInput[]) => {
   return posts;
 }
 
-const userData: Prisma.UserCreateInput[] = [
-  {
-    name: 'tomer',
-    email: 'onetwothree@prisma.io',
-    posts: {
-      create: [
-        {
-          title: 'that is cool',
-          content: 'https://www.prisma.io',
-          published: true,
-        },
-      ],
-    },
-  },
-  {
-    name: 'amit',
-    email: 'njwuaab@prisma.io',
-    posts: {
-      create: [
-        {
-          title: 'Follow Prisma on Twitter',
-          content: 'https://www.twitter.com/prisma',
-          published: true,
-        },
-      ],
-    },
-  },
-  {
-    name: 'jan',
-    email: 'mahqdaaa@prisma.io',
-    posts: {
-      create: [
-        {
-          title: 'tell me what you think about Prisma',
-          content: 'https://pris.ly/feedbackabc',
-          published: true,
-        },
-        {
-          title: 'I am a post title',
-          content: 'https://pris.ly/youtube',
-        },
-      ],
-    },
-  },
-]
-
 async function main() {
   console.log(`Start seeding ...`);
   let posts = createNewPosts(80);
@@ -67,8 +28,8 @@ async function main() {
     data: {
       id: 1,
       username: 'tomer',
-      name: 'Tomer and Noga',
-      email: 'noga@walla.com',
+      name: 'Tomer',
+      email: 'tomer@gmail.com',
       posts: {
         create: posts
       }
